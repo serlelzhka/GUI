@@ -28,5 +28,16 @@ namespace GUI
 
             MessageBox.Show(Logic.Compare(number), "Вывод:");
         }
+        void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter)
+            {
+                button1_Click(button1, null);
+            }
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }
