@@ -40,4 +40,43 @@ namespace GUI
             }
         }
     }
+    public class Logic
+    {
+        public static string Compare(int number)
+        {
+            int firstDigit;
+            int secondDigit;
+            int thirdDigit;
+            int fourDigit;
+            int fiveDigit;
+            int sixDigit;
+
+            if (number > 999999)
+            {
+                return "ошибка";
+            }
+            else if (number < 100000)
+            {
+                return "ошибка";
+            }
+            else
+            {
+                firstDigit = number / 100000;
+                secondDigit = (number / 10000) % 10;
+                thirdDigit = (number / 1000) % 10;
+                fourDigit = (number / 100) % 10;
+                fiveDigit = (number / 10) % 10;
+                sixDigit = number % 10;
+
+                if ((firstDigit + secondDigit + thirdDigit) == (fourDigit + fiveDigit + sixDigit))
+                {
+                    return "число счастливое";
+                }
+                else
+                {
+                    return "число не счастливое";
+                }
+            }
+        }
+    }
 }
